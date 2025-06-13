@@ -57,9 +57,18 @@
   display: inline-flex;
   align-items: center;
 }
+.site-footer__icon-img {
+  width: 32px;      /* سایز دلخواه آیکون */
+  height: 32px;
+  display: block;
+  transition: transform 0.2s;
+}
 .site-footer__icon:hover {
   color: #0077ff; /* Accent color on hover */
   transform: translateY(-2px) scale(1.1);
+}
+.site-footer__icon:hover .site-footer__icon-img {
+  transform: scale(1.15) translateY(-2px);
 }
 .site-footer__icon--twitter svg {
   color: #1da1f2;
