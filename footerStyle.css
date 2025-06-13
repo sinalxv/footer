@@ -1,132 +1,142 @@
-/* Main footer container: minimal, centered, modern */
+/* Main footer container: sets background, text color, and padding for the footer */
 .site-footer {
-  background: #fcfbfb; /* Clean white background */
-  color: #222; /* Soft dark text */
-  padding: 16px 8px; /* ارتفاع کمتر با padding کمتر */
-  padding-left: 16px;
-  padding-right: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;           /* آیتم‌ها در یک خط */
-  justify-content: flex-start;   /* از چپ شروع شوند */
-  align-items: center;           /* وسط خط افقی */
-  gap: 24px;                     /* فاصله بین آیتم‌ها */
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  border-top: 1px solid #eee; /* Subtle top border */
+  background: #fcfbfb; /* Light background for a clean, minimal look */
+  color: #222; /* Soft dark text for readability */
+  padding: 16px 8px; /* Vertical and horizontal padding for spacing */
+  padding-left: 16px; /* Extra left padding for consistent spacing */
+  padding-right: 16px; /* Extra right padding for consistent spacing */
 }
 
-/* Logo: left-aligned, minimal size */
+/* Logo image: controls logo size and alignment */
 .site-footer__logo img {
-  width: 48px;
-  height: auto;
-  display: block;
-  margin-bottom: 0;
-  /* filter: grayscale(1) brightness(0.7);  حذف شد تا لوگو رنگی باشد */
+  width: 48px; /* Sets logo width for a compact look */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Removes extra space below image */
+  margin-bottom: 0; /* No extra space below logo */
+  /* No filter: keeps logo colored */
 }
 
-/* About and email: center-aligned, minimal spacing */
+/* About section: styles the about text block */
 .site-footer__about {
-  min-width: 120px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 2px; /* فاصله بین خطوط کمتر */
-  font-size: 1rem;
-  color: #444;
-  margin: 0 8px;
+  min-width: 120px; /* Ensures minimum width for readability */
+  text-align: left; /* Left-aligns text for desktop */
+  display: flex; /* Allows vertical stacking of children if needed */
+  flex-direction: column; /* Stacks children vertically */
+  gap: 2px; /* Small gap between lines */
+  font-size: 1rem; /* Standard readable font size */
+  color: #444; /* Slightly lighter text for contrast */
+  margin: 0 8px; /* Horizontal margin for spacing */
 }
+
+/* Email link: styles the email for visibility and interaction */
 .site-footer__email {
-  color: #0077ff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
+  color: #0077ff; /* Blue color for visibility */
+  text-decoration: none; /* Removes underline for a clean look */
+  font-weight: 500; /* Slightly bolder for emphasis */
+  transition: color 0.2s; /* Smooth color change on hover */
 }
 .site-footer__email:hover {
-  color: #0056b3;
-  text-decoration: underline;
+  color: #0056b3; /* Darker blue on hover for feedback */
+  text-decoration: underline; /* Underline on hover for clarity */
 }
+
+/* Social icons container: aligns icons in a row with spacing */
+.site-footer__social {
+  display: flex; /* Aligns icons in a row */
+  gap: 16px; /* Space between each icon */
+  align-items: center; /* Vertically centers icons */
+}
+
+/* Social icon link: base style for all social icons */
+.site-footer__icon {
+  display: flex; /* Ensures icon images are centered */
+  align-items: center; /* Vertically centers icon images */
+  transition: transform 0.2s; /* Animation on hover */
+}
+
+/* Social icon image: sets size and transition for all icons */
+.site-footer__icon-img {
+  width: 32px; /* Default icon size */
+  height: 32px;
+  display: block; /* Removes extra space below image */
+  transition: transform 0.2s; /* Smooth scaling on hover */
+}
+
+/* Make Twitter(X) icon smaller to match other logos */
 .site-footer__icon[aria-label="Twitter"] .site-footer__icon-img {
-  width: 22px;
-  height: 22px;
+  width: 24px; /* Smaller width for Twitter(X) */
+  height: 24px;
 }
+
 /* Make Instagram icon smaller to match X (Twitter) icon */
 .site-footer__icon[aria-label="Instagram"] .site-footer__icon-img {
-  width: 26px;
-  height: 26px;
+  width: 24px; /* Smaller width for Instagram */
+  height: 24px;
 }
-/* Social icons: row, minimal, monochrome with hover color */
-.site-footer__social {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  margin: 0 8px;
-}
-.site-footer__icon {
-  color: #bbb; /* Neutral icon color */
-  transition: color 0.2s, transform 0.2s;
-  display: inline-flex;
-  align-items: center;
-}
-.site-footer__icon-img {
-  width: 32px;      /* سایز دلخواه آیکون */
-  height: 32px;
-  display: block;
-  transition: transform 0.2s;
-}
-.site-footer__icon:hover {
-  color: #0077ff; /* Accent color on hover */
-  transform: translateY(-2px) scale(1.1);
-}
+
+/* Hover effect for all icons: scale up and move slightly */
 .site-footer__icon:hover .site-footer__icon-img {
-  transform: scale(1.15) translateY(-2px);
+  transform: scale(1.15) translateY(-2px); /* Slightly larger and lifted on hover */
 }
+
+/* Specific color for each social icon if using SVGs (optional, not needed for images) */
 .site-footer__icon--twitter svg {
-  color: #1da1f2;
+  color: #1da1f2; /* Twitter blue */
 }
 .site-footer__icon--instagram svg {
-  color: #e4405f;
+  color: #e4405f; /* Instagram pink */
 }
 .site-footer__icon--youtube svg {
-  color: #ff0000;
+  color: #ff0000; /* YouTube red */
 }
 
-/* Copyright: full width, small, muted */
+/* Copyright section: styles the copyright text */
 .site-footer__copyright {
-  text-align: left;
-  margin: 10px;
-  font-size: 0.95rem;
-  color: #888;
-  margin-left: auto; /* کپی‌رایت به انتهای خط برود */
-  white-space: nowrap;
+  text-align: left; /* Left-aligns text for desktop */
+  margin-top: 0; /* No extra space above */
+  font-size: 0.95rem; /* Slightly smaller text */
+  color: #888; /* Muted color for less emphasis */
+  margin-left: auto; /* Pushes copyright to the end in row layout */
+  white-space: nowrap; /* Prevents text wrapping */
 }
+
+/* Terms link: styles the terms and conditions link */
 .site-footer__link {
-  color: #0077ff;
-  text-decoration: none;
-  transition: text-decoration 0.2s;
+  color: #0077ff; /* Blue color for visibility */
+  text-decoration: none; /* No underline by default */
+  transition: text-decoration 0.2s; /* Smooth underline on hover */
 }
 .site-footer__link:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Underline on hover for clarity */
 }
 
-/* Responsive: stack vertically on small screens */
-@media (max-width: 1280px) {
+/* Responsive: stack blocks vertically and center them on small screens */
+@media (max-width: 700px) {
   .site-footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-left: 12px;
+    flex-direction: column; /* Stack all blocks vertically */
+    align-items: center; /* Center all blocks horizontally */
+    text-align: center; /* Center text for all blocks */
+    padding-left: 12px; /* Less horizontal padding for small screens */
     padding-right: 12px;
   }
   .site-footer__about,
   .site-footer__social,
   .site-footer__copyright {
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    justify-content: center;
+    align-items: center; /* Center content in each block */
+    text-align: center; /* Center text in each block */
+    width: 100%; /* Make each block full width */
+    justify-content: center; /* Center children horizontally */
   }
   .site-footer__email {
-    display: block;
-    margin: 0 auto 8px auto;
+    display: block; /* Make email take full width */
+    margin: 0 auto 8px auto; /* Center email with margin below */
+  }
+}
+
+/* Extra small screens: reduce padding to prevent overflow */
+@media (max-width: 350px) {
+  .site-footer {
+    padding-left: 4px; /* Minimal padding for very small screens */
+    padding-right: 4px;
   }
 }
