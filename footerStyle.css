@@ -1,0 +1,122 @@
+/* Main footer container: minimal, centered, modern */
+.site-footer {
+  background: #fcfbfb; /* Clean white background */
+  color: #222; /* Soft dark text */
+  padding: 16px 8px; /* ارتفاع کمتر با padding کمتر */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;           /* آیتم‌ها در یک خط */
+  justify-content: flex-start;   /* از چپ شروع شوند */
+  align-items: center;           /* وسط خط افقی */
+  gap: 24px;                     /* فاصله بین آیتم‌ها */
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  border-top: 1px solid #eee; /* Subtle top border */
+}
+
+/* Logo: left-aligned, minimal size */
+.site-footer__logo img {
+  width: 48px;
+  height: auto;
+  display: block;
+  margin-bottom: 0;
+  /* filter: grayscale(1) brightness(0.7);  حذف شد تا لوگو رنگی باشد */
+}
+
+/* About and email: center-aligned, minimal spacing */
+.site-footer__about {
+  min-width: 120px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* فاصله بین خطوط کمتر */
+  font-size: 1rem;
+  color: #444;
+  margin: 0 8px;
+}
+.site-footer__email {
+  color: #0077ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.site-footer__email:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Social icons: row, minimal, monochrome with hover color */
+.site-footer__social {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 0 8px;
+}
+.site-footer__icon {
+  color: #bbb; /* Neutral icon color */
+  transition: color 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+.site-footer__icon:hover {
+  color: #0077ff; /* Accent color on hover */
+  transform: translateY(-2px) scale(1.1);
+}
+.site-footer__icon--twitter svg {
+  color: #1da1f2;
+}
+.site-footer__icon--instagram svg {
+  color: #e4405f;
+}
+.site-footer__icon--youtube svg {
+  color: #ff0000;
+}
+
+/* Copyright: full width, small, muted */
+.site-footer__copyright {
+  text-align: left;
+  margin-top: 0;
+  font-size: 0.95rem;
+  color: #888;
+  margin-left: auto; /* کپی‌رایت به انتهای خط برود */
+  white-space: nowrap;
+}
+.site-footer__link {
+  color: #0077ff;
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+.site-footer__link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 900px) {
+  .site-footer {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .site-footer__copyright {
+    margin-left: 0;
+    margin-top: 8px;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+  }
+  .site-footer__about {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .site-footer__copyright {
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+  }
+}
