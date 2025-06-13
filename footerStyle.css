@@ -3,6 +3,8 @@
   background: #fcfbfb; /* Clean white background */
   color: #222; /* Soft dark text */
   padding: 16px 8px; /* ارتفاع کمتر با padding کمتر */
+  padding-left: 16px;
+  padding-right: 16px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;           /* آیتم‌ها در یک خط */
@@ -43,11 +45,19 @@
   color: #0056b3;
   text-decoration: underline;
 }
-
+.site-footer__icon[aria-label="Twitter"] .site-footer__icon-img {
+  width: 22px;
+  height: 22px;
+}
+/* Make Instagram icon smaller to match X (Twitter) icon */
+.site-footer__icon[aria-label="Instagram"] .site-footer__icon-img {
+  width: 26px;
+  height: 26px;
+}
 /* Social icons: row, minimal, monochrome with hover color */
 .site-footer__social {
   display: flex;
-  gap: 12px;
+  gap: 30px;
   align-items: center;
   margin: 0 8px;
 }
@@ -83,7 +93,7 @@
 /* Copyright: full width, small, muted */
 .site-footer__copyright {
   text-align: left;
-  margin-top: 0;
+  margin: 10px;
   font-size: 0.95rem;
   color: #888;
   margin-left: auto; /* کپی‌رایت به انتهای خط برود */
@@ -99,33 +109,24 @@
 }
 
 /* Responsive: stack vertically on small screens */
-@media (max-width: 900px) {
-  .site-footer {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .site-footer__copyright {
-    margin-left: 0;
-    margin-top: 8px;
-    width: 100%;
-    text-align: left;
-  }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 1280px) {
   .site-footer {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    text-align: left;
+    align-items: center;
+    text-align: center;
+    padding-left: 12px;
+    padding-right: 12px;
   }
-  .site-footer__about {
-    align-items: flex-start;
-    text-align: left;
-  }
+  .site-footer__about,
+  .site-footer__social,
   .site-footer__copyright {
+    align-items: center;
+    text-align: center;
     width: 100%;
-    text-align: left;
-    margin-top: 8px;
+    justify-content: center;
+  }
+  .site-footer__email {
+    display: block;
+    margin: 0 auto 8px auto;
   }
 }
